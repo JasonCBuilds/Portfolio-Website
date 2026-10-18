@@ -9,6 +9,11 @@
 </head>
 <body>
   <main class="app-shell">
+    <nav class="project-nav" aria-label="Portfolio projects">
+      <strong>JasonCBuilds Operations Toolkit</strong>
+      <a href="shipment-exception-monitor/">Shipment Exception Monitor →</a>
+    </nav>
+
     <header class="page-header">
       <div class="brand-mark" aria-hidden="true">
         <svg viewBox="0 0 32 32" role="img"><path d="M5 8h15v12H5zM20 12h4l4 5v3h-8zM10 25a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm14 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
@@ -27,7 +32,6 @@
         </div>
 
         <form id="calculator-form" novalidate>
-          <!-- Each field uses a unit label so users know exactly what to enter. -->
           <div class="field-grid">
             <label for="miles"><span>Total route miles</span><small>Round-trip distance</small></label>
             <div class="input-wrap"><input id="miles" name="miles" type="number" min="0.01" step="0.1" value="120" required><span>miles</span></div>
