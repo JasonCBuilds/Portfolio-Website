@@ -1,67 +1,73 @@
-# Last-Mile Delivery Cost Calculator
+# JasonCBuilds Operations Toolkit
 
-A lightweight, mobile-friendly web calculator for estimating route economics. It helps logistics, delivery, and operations teams understand the cost to serve a route, compare that cost with a target selling price, and evaluate profitability at both the route and stop level.
+A growing portfolio of practical supply-chain and logistics tools built to demonstrate how operational knowledge can be translated into software, automation, and decision support.
 
-## Business problem
+## Projects
 
-Last-mile delivery is often the most operationally complex and expensive part of fulfillment. Route distance, stop density, driver time, vehicle efficiency, fuel prices, and fixed expenses all affect whether a route is profitable. When these inputs live in separate spreadsheets or are estimated informally, teams can underprice work or overlook inefficient routes.
+### 1. Last-Mile Delivery Cost Calculator
 
-This calculator brings the core variables into one transparent model that is quick to use in pricing discussions, route reviews, and scenario planning.
+A route economics tool for estimating:
 
-## Features
+- Fuel cost
+- Labor cost
+- Fixed operating cost
+- Cost per stop
+- Suggested route pricing
+- Estimated profit at a target margin
 
-- Inputs for route distance, stops, time, fuel, vehicle efficiency, labor, fixed costs, and target margin
-- Estimated fuel cost, labor cost, and total operating cost
-- Cost-per-stop visibility for route benchmarking
-- Suggested total route price and price per stop
-- Estimated profit at the chosen target margin
-- Input validation and a one-click reset
-- Responsive card-based layout for desktop and mobile
-- No frameworks or build step—just HTML, CSS, and JavaScript
+**Business value:** helps operators price routes consistently and understand the cost drivers behind last-mile delivery.
 
-## Formulas
+The calculator is the repository root application.
 
-| Result | Formula |
-| --- | --- |
-| Fuel cost | `(route miles ÷ vehicle MPG) × fuel price per gallon` |
-| Labor cost | `(route minutes ÷ 60) × hourly labor cost` |
-| Total operating cost | `fuel cost + labor cost + additional fixed costs` |
-| Cost per stop | `total operating cost ÷ delivery stops` |
-| Suggested route price | `total operating cost ÷ (1 − target margin decimal)` |
-| Suggested price per stop | `suggested route price ÷ delivery stops` |
-| Estimated profit | `suggested route price − total operating cost` |
+### 2. Shipment Exception Monitor
 
-The target is treated as a **profit margin**, meaning profit as a percentage of the final selling price. This differs from a markup, which applies a percentage directly to cost.
+Located in `/shipment-exception-monitor`.
 
-## Strategic operations relevance
+An interactive shipment-health dashboard that:
 
-The tool supports common last-mile decisions such as:
+- Flags late shipments
+- Detects stale carrier scans
+- Surfaces shipments due within 24 hours
+- Calculates exception KPIs
+- Lets users search and filter freight
+- Generates structured email-alert previews
+- Allows scenario testing with user-added shipments
 
-- Evaluating whether a proposed route can meet profitability targets
-- Comparing routes with different stop densities or drive times
-- Understanding how fuel or wage changes affect pricing
-- Creating a consistent cost baseline for delivery bids
-- Identifying the operational levers—miles, minutes, stops, or fixed costs—with the greatest effect on cost per stop
+**Business value:** helps transportation teams focus attention on shipments that require intervention before they become customer escalations.
 
-It is a directional planning tool rather than a replacement for a full transportation-management or accounting system. Insurance, depreciation, failed deliveries, overhead, taxes, and other costs can be included in the additional fixed operating cost input when relevant.
+See: [Shipment Exception Monitor README](shipment-exception-monitor/README.md)
 
-## Run locally
+## Why this portfolio exists
 
-Open `index.html` in any modern browser. No installation or build command is required.
+These projects combine hands-on supply-chain thinking with lightweight software development. The goal is not to recreate a full TMS or ERP. It is to demonstrate how clear business rules, usable interfaces, and automation can solve focused operational problems.
 
-For a local web server, run one of these commands in the project folder:
+Areas represented in the toolkit include:
 
-```bash
-python -m http.server 8000
-```
+- Transportation management
+- Last-mile operations
+- Shipment exception management
+- Cost modeling
+- KPI design
+- Workflow automation
+- Operational decision support
 
-Then visit `http://localhost:8000`.
+## Technology
 
-## Publish on GitHub Pages
+The current projects intentionally use simple browser technologies:
 
-1. Push these files to a GitHub repository.
-2. Open the repository's **Settings → Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**.
-4. Select the branch and the root folder, then save.
+- HTML
+- CSS
+- Vanilla JavaScript
 
-GitHub Pages will publish the static app without additional configuration.
+That keeps each tool easy to inspect, run, and deploy without a build system.
+
+## Roadmap
+
+Potential additions include:
+
+- Carrier performance scorecard
+- Inventory reorder planner
+- Freight quote comparison tool
+- Purchase-order exception monitor
+- Secure server-side email integration
+- External carrier/TMS API integrations
