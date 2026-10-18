@@ -1,0 +1,56 @@
+name: Operations consultation request
+description: Tell me about the logistics, shipping, or operations problem you want to solve.
+title: "[Consultation] "
+labels: ["consultation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reaching out. Please share enough context for me to understand the operational problem. Avoid posting confidential customer, employee, pricing, account, or proprietary information in a public issue.
+  - type: input
+    id: business
+    attributes:
+      label: Business / operation type
+      description: What kind of business or operation is this?
+      placeholder: e.g. ecommerce retailer, local distributor, delivery operation
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Primary area
+      options:
+        - Shipping cost / pricing
+        - Transportation / routing
+        - Shipment visibility / exceptions
+        - Inventory / fulfillment
+        - Spreadsheet / dashboard
+        - Workflow automation
+        - SOP / process improvement
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you trying to solve?
+      description: Describe what is happening today and why it is a problem.
+      placeholder: We currently...
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: What would a better outcome look like?
+      placeholder: We want to...
+    validations:
+      required: true
+  - type: input
+    id: timeline
+    attributes:
+      label: Desired timeline
+      placeholder: e.g. this month, next 2 weeks, exploratory
+  - type: markdown
+    attributes:
+      value: |
+        I’ll review the request and use it to determine whether a focused audit, tool, or larger project makes sense.

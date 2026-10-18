@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Estimate last-mile route costs, cost per stop, and target pricing.">
+  <title>Last-Mile Delivery Cost Calculator | JasonCBuilds</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <nav class="project-nav" aria-label="Portfolio projects">
+      <a href="../">← JasonCBuilds Operations Toolkit</a>
+      <a href="../shipment-exception-monitor/">Shipment Exception Monitor →</a>
+    </nav>
+
+    <header class="page-header">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" role="img"><path d="M5 8h15v12H5zM20 12h4l4 5v3h-8zM10 25a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm14 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
+      </div>
+      <div>
+        <h1>Last-Mile Delivery Cost Calculator</h1>
+        <p>Estimate route profitability and cost per stop to price confidently and operate efficiently.</p>
+      </div>
+    </header>
+
+    <div class="calculator-grid">
+      <section class="panel input-panel" aria-labelledby="inputs-heading">
+        <div class="section-heading">
+          <h2 id="inputs-heading">Route inputs</h2>
+          <p>Enter your expected route and operating details.</p>
+        </div>
+
+        <form id="calculator-form" novalidate>
+          <div class="field-grid">
+            <label for="miles"><span>Total route miles</span><small>Round-trip distance</small></label>
+            <div class="input-wrap"><input id="miles" name="miles" type="number" min="0.01" step="0.1" value="120" required><span>miles</span></div>
+
+            <label for="stops"><span>Number of delivery stops</span><small>Completed stops on route</small></label>
+            <div class="input-wrap"><input id="stops" name="stops" type="number" min="1" step="1" value="20" required><span>stops</span></div>
+
+            <label for="minutes"><span>Estimated route time</span><small>Driving and service time</small></label>
+            <div class="input-wrap"><input id="minutes" name="minutes" type="number" min="1" step="1" value="240" required><span>minutes</span></div>
+
+            <label for="fuel-price"><span>Fuel price per gallon</span><small>Current local fuel price</small></label>
+            <div class="input-wrap money"><b>$</b><input id="fuel-price" name="fuelPrice" type="number" min="0" step="0.01" value="3.75" required><span>/ gallon</span></div>
+
+            <label for="mpg"><span>Vehicle miles per gallon</span><small>Average route fuel economy</small></label>
+            <div class="input-wrap"><input id="mpg" name="mpg" type="number" min="0.01" step="0.1" value="12" required><span>mpg</span></div>
+
+            <label for="labor-rate"><span>Driver hourly labor cost</span><small>Fully loaded hourly rate</small></label>
+            <div class="input-wrap money"><b>$</b><input id="labor-rate" name="laborRate" type="number" min="0" step="0.01" value="25" required><span>/ hour</span></div>
+
+            <label for="fixed-costs"><span>Additional fixed operating costs</span><small>Tolls, parking, maintenance, etc.</small></label>
+            <div class="input-wrap money"><b>$</b><input id="fixed-costs" name="fixedCosts" type="number" min="0" step="0.01" value="40" required><span>/ route</span></div>
+
+            <label for="margin"><span>Target profit margin</span><small>Share of final route price</small></label>
+            <div class="input-wrap"><input id="margin" name="margin" type="number" min="0" max="99.99" step="0.1" value="15" required><span>%</span></div>
+          </div>
+
+          <p id="form-error" class="error-message" role="alert" aria-live="polite"></p>
+          <div class="actions">
+            <button class="primary-button" type="submit">Calculate route</button>
+            <button class="secondary-button" type="reset">Reset</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel results-panel" aria-labelledby="results-heading" aria-live="polite">
+        <div class="section-heading">
+          <h2 id="results-heading">Route results</h2>
+          <p>Your cost baseline and target pricing.</p>
+        </div>
+
+        <div class="key-results">
+          <div><span>Suggested total route price</span><strong id="route-price">$0.00</strong></div>
+          <div><span>Suggested price per stop</span><strong id="price-per-stop">$0.00</strong></div>
+          <div><span>Estimated profit</span><strong id="profit">$0.00</strong></div>
+        </div>
+
+        <dl class="cost-breakdown">
+          <div><dt>Estimated fuel cost</dt><dd id="fuel-cost">$0.00</dd></div>
+          <div><dt>Estimated labor cost</dt><dd id="labor-cost">$0.00</dd></div>
+          <div><dt>Total operating cost</dt><dd id="total-cost">$0.00</dd></div>
+          <div><dt>Cost per stop</dt><dd id="cost-per-stop">$0.00</dd></div>
+        </dl>
+
+        <div class="results-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 10v6M12 7h.01"/></svg>
+          <p id="pricing-note">Pricing uses your target profit margin on the final route price.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

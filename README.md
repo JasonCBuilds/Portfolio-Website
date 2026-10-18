@@ -1,12 +1,26 @@
-# JasonCBuilds Operations Toolkit
+# JasonCBuilds — Supply Chain & Operations Solutions
 
-A growing portfolio of practical supply-chain and logistics tools built to demonstrate how operational knowledge can be translated into software, automation, and decision support.
+A live portfolio and service site focused on practical logistics, transportation, operations analysis, and workflow automation.
 
-## Projects
+## Live site
 
-### 1. Last-Mile Delivery Cost Calculator
+The repository publishes automatically to GitHub Pages from `main`.
 
-A route economics tool for estimating:
+## Site structure
+
+### Homepage
+Business-facing landing page that explains:
+
+- What operational problems JasonCBuilds helps solve
+- Service areas
+- A starter Logistics & Shipping Operations Audit
+- Working portfolio projects
+- Contact and source-code paths
+
+### Last-Mile Delivery Cost Calculator
+Path: `/route-cost-calculator/`
+
+Models:
 
 - Fuel cost
 - Labor cost
@@ -15,59 +29,28 @@ A route economics tool for estimating:
 - Suggested route pricing
 - Estimated profit at a target margin
 
-**Business value:** helps operators price routes consistently and understand the cost drivers behind last-mile delivery.
+### Shipment Exception Monitor
+Path: `/shipment-exception-monitor/`
 
-The calculator is the repository root application.
+Demonstrates:
 
-### 2. Shipment Exception Monitor
+- Late-shipment detection
+- Stale tracking scans
+- At-risk shipment visibility
+- KPI design
+- Structured alert previews
+- Scenario testing
 
-Located in `/shipment-exception-monitor`.
+## Positioning
 
-An interactive shipment-health dashboard that:
+The portfolio is designed to show the intersection of:
 
-- Flags late shipments
-- Detects stale carrier scans
-- Surfaces shipments due within 24 hours
-- Calculates exception KPIs
-- Lets users search and filter freight
-- Generates structured email-alert previews
-- Allows scenario testing with user-added shipments
-
-**Business value:** helps transportation teams focus attention on shipments that require intervention before they become customer escalations.
-
-See: [Shipment Exception Monitor README](shipment-exception-monitor/README.md)
-
-## Why this portfolio exists
-
-These projects combine hands-on supply-chain thinking with lightweight software development. The goal is not to recreate a full TMS or ERP. It is to demonstrate how clear business rules, usable interfaces, and automation can solve focused operational problems.
-
-Areas represented in the toolkit include:
-
-- Transportation management
-- Last-mile operations
-- Shipment exception management
+- Supply-chain and logistics knowledge
+- Transportation operations
 - Cost modeling
+- Exception management
 - KPI design
 - Workflow automation
-- Operational decision support
+- Lightweight software development
 
-## Technology
-
-The current projects intentionally use simple browser technologies:
-
-- HTML
-- CSS
-- Vanilla JavaScript
-
-That keeps each tool easy to inspect, run, and deploy without a build system.
-
-## Roadmap
-
-Potential additions include:
-
-- Carrier performance scorecard
-- Inventory reorder planner
-- Freight quote comparison tool
-- Purchase-order exception monitor
-- Secure server-side email integration
-- External carrier/TMS API integrations
+The goal is to make the business value understandable even to visitors who never inspect the source code.
