@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hybrid appointment booking and digital walk-in queue demo for service businesses.">
+  <title>Booking & Walk-In Queue Demo | JasonCBuilds</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <nav class="topbar" aria-label="Project navigation">
+      <a class="brand" href="../">← JasonCBuilds Operations Toolkit</a>
+      <div class="nav-links">
+        <a href="../route-cost-calculator/">Route Calculator</a>
+        <a href="../shipment-exception-monitor/">Shipment Monitor</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div>
+        <p class="eyebrow">BUSINESS OPERATIONS TOOL</p>
+        <h1>Booking & Walk-In Queue</h1>
+        <p class="hero-copy">A hybrid scheduling concept for service businesses that need both appointments and same-day walk-ins.</p>
+      </div>
+      <span class="demo-pill">Interactive demo</span>
+    </header>
+
+    <section class="notice">
+      <strong>Portfolio demo:</strong> fictional sample data only. No appointment is actually booked and no customer data is stored.
+    </section>
+
+    <div class="workspace">
+      <section class="panel booking-panel">
+        <div class="mode-tabs" role="tablist" aria-label="Booking mode">
+          <button id="book-tab" class="mode-tab active" type="button">Book an appointment</button>
+          <button id="queue-tab" class="mode-tab" type="button">Join walk-in queue</button>
+        </div>
+
+        <div id="book-view">
+          <div class="field-grid">
+            <label>
+              Service provider
+              <select id="provider">
+                <option>First available</option>
+                <option>Provider A</option>
+                <option>Provider B</option>
+              </select>
+            </label>
+
+            <label>
+              Service
+              <select id="service">
+                <option>Standard service</option>
+                <option>Standard + add-on</option>
+                <option>Express service</option>
+              </select>
+            </label>
+
+            <label>
+              Date
+              <input id="date" type="date">
+            </label>
+          </div>
+
+          <div class="time-section">
+            <div class="section-label">Available demo times</div>
+            <div id="time-grid" class="time-grid"></div>
+          </div>
+
+          <button id="preview-booking" class="primary-button" type="button">Preview booking</button>
+          <div id="booking-result" class="result-card" hidden></div>
+        </div>
+
+        <div id="queue-view" hidden>
+          <div class="queue-status">
+            <span class="queue-label">Current simulated queue</span>
+            <strong id="queue-count">3 waiting</strong>
+            <p id="wait-time">Illustrative wait: 25–40 minutes.</p>
+          </div>
+
+          <label>
+            Preferred provider
+            <select id="queue-provider">
+              <option>First available</option>
+              <option>Provider A</option>
+              <option>Provider B</option>
+            </select>
+          </label>
+
+          <button id="queue-action" class="primary-button" type="button">Join demo queue</button>
+          <div id="queue-result" class="result-card" hidden></div>
+        </div>
+      </section>
+
+      <aside class="side-stack">
+        <section class="panel">
+          <p class="eyebrow">WHY THIS EXISTS</p>
+          <h2>One system for planned and walk-in demand.</h2>
+          <p class="muted">Many appointment-based businesses also handle customers who arrive without reservations. This concept puts both flows into one simple experience.</p>
+        </section>
+
+        <section class="panel">
+          <p class="eyebrow">BUSINESS USE CASES</p>
+          <ul class="feature-list">
+            <li>Barbershops and salons</li>
+            <li>Auto-detailing and service businesses</li>
+            <li>Repair shops</li>
+            <li>Clinics and appointment-based offices</li>
+            <li>Any business balancing appointments and walk-ins</li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <p class="eyebrow">PRODUCTION EXTENSIONS</p>
+          <ul class="feature-list">
+            <li>Real-time availability</li>
+            <li>SMS or email confirmations</li>
+            <li>Customer check-in</li>
+            <li>Provider dashboards</li>
+            <li>Wait-time estimates and notifications</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <footer>
+      <p>Adapted from the private S.Y.L.R Queue prototype to demonstrate booking, queue logic, and service-business workflow design.</p>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
