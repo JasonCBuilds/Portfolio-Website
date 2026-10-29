@@ -41,6 +41,18 @@ Demonstrates:
 - Structured alert previews
 - Scenario testing
 
+### Booking & Walk-In Queue Demo
+Path: `/booking-queue-demo/`
+
+Public portfolio adaptation of the private S.Y.L.R Queue prototype. Demonstrates:
+
+- Appointment scheduling flow
+- Provider and service selection
+- Date/time selection
+- Digital walk-in queue behavior
+- Join / leave queue logic
+- Service-business workflow design
+
 ## Positioning
 
 The portfolio is designed to show the intersection of:
@@ -51,6 +63,7 @@ The portfolio is designed to show the intersection of:
 - Exception management
 - KPI design
 - Workflow automation
+- Booking and queue workflows
 - Lightweight software development
 
 The goal is to make the business value understandable even to visitors who never inspect the source code.

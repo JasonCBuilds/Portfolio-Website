@@ -69,7 +69,7 @@ h3 { margin-bottom: 10px; font-size: 1.28rem; letter-spacing: -.025em; }
 .dark-section { background: var(--dark); color: white; }
 .section-heading.light > p:last-child { color: #aebfd0; }
 .dark-section .eyebrow { color: #62c5b9; }
-.project-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+.project-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
 .project-card { padding: 28px; border: 1px solid #294260; border-radius: var(--radius); background: var(--dark-card); }
 .project-meta { display: flex; justify-content: space-between; gap: 14px; margin-bottom: 38px; color: #9fb3c7; font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
 .project-card h3 { font-size: 1.6rem; }
@@ -105,6 +105,9 @@ h3 { margin-bottom: 10px; font-size: 1.28rem; letter-spacing: -.025em; }
 .footer-wrap > div { display: flex; gap: 14px; align-items: center; }
 .footer span, .footer a { color: var(--slate); font-size: .78rem; text-decoration: none; }
 .footer a:hover { color: var(--teal-dark); }
+@media (max-width: 1000px) {
+  .project-grid { grid-template-columns: repeat(2,1fr); }
+}
 @media (max-width: 900px) {
   .hero, .audit-layout, .credibility-layout, .contact-card { grid-template-columns: 1fr; gap: 32px; }
   .service-grid { grid-template-columns: 1fr; }
